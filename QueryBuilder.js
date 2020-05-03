@@ -1,10 +1,9 @@
 module.exports.QueryBuilder = (function() {
     /**
-     * @issue : object variable point issue 
      * @todo  : add gropstart, group end
      */
 
-    let cacheVal = {
+    let cacheVal = tmp = {
         limit: {
             val: 0,
             offset: 0,
@@ -418,8 +417,8 @@ module.exports.QueryBuilder = (function() {
         if (cacheVal.limit.isCall) {
             finalQuery = `${finalQuery}${compile._limit(cacheVal.limit.val, cacheVal.limit.offset)}`;
         }
-        
+        cacheVal = tmp;
         return compile._final(finalQuery);
     }
     return QueryBuilder;
-})();
+})();ㅌㅈ
